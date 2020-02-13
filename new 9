@@ -1,0 +1,77 @@
+TB-1496 View Order And Audit Logs
+Version No.: 1.2
+Date: Thursday, February 13, 2020
+Project Name : Trailblazer-Sustenance
+Project Code : C/161035 
+
+
+
+HCL TECHNOLOGIES LTD.,
+ETA-3,
+NAVALUR,
+CHENNAI
+
+Copyright Notice
+This document contains proprietary information of HCL Technologies Ltd. No part of this document may be reproduced, stored, copied, or transmitted in any form or by means of electronic, mechanical, photocopying or otherwise, without the express consent of HCL Technologies.  This document is intended for internal circulation only and not meant for external distribution.
+
+
+
+
+Revision History
+Version No	Date	Prepared by / Modified by	Significant Changes
+1.0	17-Feb-2020	Anjaneyulu Mallela	Initial draft
+
+
+
+
+
+
+Reference
+Name	Specification	Date
+1	TB-1496  View Orders And Audit Logs 	17-Feb-2020
+
+
+ 
+Table of Contents
+1.	Overview	4
+1.1	Purpose of this Document	4
+2.	View Orders And Audit Logs	4
+3.	Queries and Clarifications	4
+
+ 
+1.	 Overview	
+1.1	Purpose of this Document
+The document contains the implementation details for the enhancements in View Order and Audit Logs. Two new fields, ’Customer Phone Number’ and ‘Customer Email Address’ should be added between the existing "Company" and "Partner" fields in the "Customer Information" section. They should show the phone number and email address associated to the customer user. Customer Login ID, Customer Name and Type should be shown in a tabular format as a new section between the existing "Customer Information" and "Select Order" sections.
+2.	View Orders And Audit Logs 
+The following new fields are included in the "Customer Information" section of View Order and Audit Logs tool in the Provider Portal. 
+
+1.	Field name: Customer Phone Number.
+a.	This field will display the phone number associated to the customer user.
+b.	It is placed below the field ‘Company’ 
+c.	We will get phone number value as phone_number field from CONTAT table
+
+2.	Field name: Customer Email Address. 
+a.	This field will display the email associated to the customer user.
+b.	It is placed above the field ‘Partner’.
+c.	We will get email value as email field from CONTAT table
+
+The following three fields should be added in a tabular format as a new section between the existing "Customer Information" and "Select Order" sections.
+1.	Customer Login ID, Customer Name and Type
+2.	It only needs to be shown on the 1st screen of the tool (meaning it does not need to be shown on the second screen that shown details for a selected order). 
+3.	However, if it is easier to also show it on the second screen that is fine.
+4.	c) It should have a fixed height of 4 rows, including the header (column title) row, meaning that at most 3 customer users will be visible at the same time.
+5.	d) It should be scrollable vertically with a fixed header (column title) row to allow viewing of all users for any customer that has more than 3 users.
+6.	e) The possible values for the "Type" field should be either "Primary" or "Secondary".
+7.	f) The "Primary" user for the customer should always be shown as the first entry (row) in the table, followed by all the secondary users sorted by 
+8.	"Customer Login ID" ascending. So, overall sort of the table should be first on "Type" ascending and then on "Customer Login ID" ascending.
+9.	g) The customer user that is shown in the "Customer Information" section should also be shown in the table.
+
+
+
+
+
+3.	 Queries and Clarifications                                                       
+1.	For NP customer, should the send mail field be kept in disabled state or should we not display the send mail field?  
+Answer: For NP customer, the send Email field should not be displayed.  [Rajesh, 28.05.2019]
+
+
